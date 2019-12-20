@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Item
+  - Target
+  - Wood
+  - Concrete
+  - Dirt
+  - Fire
+  - Metal
+  - Crosshair
+  - NPC
+  - Flesh
+  - Cover
+  - SecondCamera
+  - BulletSpawn
+  - Weapon
+  - SceneFader
+  - Zombie
+  - HealthPickup
+  - GM
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - GUN
+  - 
+  - 
+  - 
+  - 
+  - Post Processing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Weapon
+  - Player
+  - NPC
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
