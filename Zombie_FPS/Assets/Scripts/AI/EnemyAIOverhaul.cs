@@ -9,10 +9,12 @@ public class EnemyAIOverhaul : MonoBehaviour
 
     HealthController healthController;
 
-    private Vector3 wanderPoint;
+    //private Vector3 wanderPoint;
 
     public Transform target;
     public Animator animator;
+
+    //bool isProvoked = false;
 
     public float distanceTreshold = 10f;
     public float attackTreshold = 1.5f;
@@ -35,8 +37,13 @@ public class EnemyAIOverhaul : MonoBehaviour
 
     void Update()
     {
-        //Wander();  
-        //StartCoroutine(Think());  
+        //Wander();
+        float dist = Vector3.Distance(target.position, transform.position);
+
+        //if (dist < distanceTreshold) // if dist is less than 10 chase the player
+        //{
+        //    StartCoroutine(Think());
+        //}  
     }
 
     // Co-Routine - Zombie adapts to the player location
@@ -93,7 +100,7 @@ public class EnemyAIOverhaul : MonoBehaviour
                     break;
             }
 
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.1f);
         }
     }
 

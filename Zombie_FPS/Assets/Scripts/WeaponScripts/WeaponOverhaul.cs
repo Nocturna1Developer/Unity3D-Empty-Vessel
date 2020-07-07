@@ -9,44 +9,45 @@ public class WeaponOverhaul : MonoBehaviour
 
     private Animator anim;
 
-    public AudioSource audioSource;
-
     private FirstPersonController FPSController;
-
-    public ParticleSystem muzzleFlash;
-
+    
+    [Header("Weapon Audio")]
+    public AudioSource audioSource;
     public AudioClip shootSound;
     public AudioClip reloadSound;
+    //public AudioClip emptyChamberSound;
 
-    public Transform shootPoint; // Were the bullet leaves the muzzle
-
+    [Header("Weapon Properties")]
+    public int bulletPerMag = 32;
+    public static int currentbullets;
+    public static int bulletsLeft = 96;
+    public int fieldofView = 75;
+    public ParticleSystem muzzleFlash;
+    public Transform shootPoint;         
     public GameObject hitParticles;
     public GameObject bloodParticles;
+
+    [Header("Weapon Setings")]
+    public float range = 100f;
+    public float fireRate = 0.1f;
+    public float damage = 5f;
+    public float headshotDamage = 5f;
+    public float adsSpeed = 1f;
+    public float TargetFOV = 50f;
+    public float NormalFOV = 70f;
+    public float Speed = 5f;
+    public float spreadFactor = 0.1f;
 
     private Vector3 initPos;
     private Vector3 orginalPosition;
     public Vector3 aimPosition;
 
-
-    public int bulletPerMag = 32;
-    public static int currentbullets;
-    public static int bulletsLeft = 96;
-    public int fieldofView = 75;
-
-    public float range = 100f;
-    public float fireRate = 0.1f;
-    public float damage = 5f;
-    public float adsSpeed = 1f;
-    public float TargetFOV = 50f;
-    public float NormalFOV = 70f;
-    public float Speed = 5f;
-
-    float fireTimer; // Counter for the delay
+    // Counter for the delay
+    float fireTimer;
 
     private bool isReloading;
     private bool isLeaningLeft = false;
     private bool isLeaningRight = false;
-
 
     void Start()
     {
@@ -80,14 +81,19 @@ public class WeaponOverhaul : MonoBehaviour
             if(currentbullets < bulletPerMag && bulletsLeft > 0)  
                 DoReload(); 
         }
-
-        // Aim
         AimDownSights();
+
+        //if (bulletsLeft <= 0)
+        //{
+        //    audioSource.PlayOneShot(emptyChamberSound);
+        //}
     }
 
     void FixedUpdate() 
     {
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
+
+        if(info.IsName("Fire")) anim.SetBool("fire", false);
 
         isReloading = info.IsName("Reload");
     }
@@ -108,20 +114,31 @@ public class WeaponOverhaul : MonoBehaviour
 
     private void Fire()
     {
-        // Can't get negative bullets
+        // Prevents negative bullets
+
         if (fireTimer < fireRate || currentbullets <= 0 || isReloading) 
             return;
 
-        anim.CrossFadeInFixedTime("fire", 0.01f);
+        // Plays animation, reduces bullets, plays audio
+
+        anim.CrossFadeInFixedTime("Fire", 0.01f);
         muzzleFlash.Play();
         PlayShootSound();
 
         currentbullets--;
         UpdateAmmoText();
-        fireTimer = 0.0f; // Reset Timer
+        // Resets Timer
+        fireTimer = 0.0f; 
+
+        // Bullet Spread - Changes with respect to parent
+
+        Vector3 shootDirection = shootPoint.transform.forward;
+        shootDirection = shootDirection + shootPoint.TransformDirection(new Vector3(Random.Range(-spreadFactor,spreadFactor), Random.Range(-spreadFactor,spreadFactor)));
+
+        // Raycasting
 
         RaycastHit hit;
-        if (Physics.Raycast(shootPoint.position, transform.forward, out hit, range))
+        if (Physics.Raycast(shootPoint.position, shootDirection, out hit, range))
         {
             //Debug.Log(hit.transform.name + "hit");
 
@@ -132,12 +149,20 @@ public class WeaponOverhaul : MonoBehaviour
             if(hit.transform.tag == "Zombie")
             {
                 GameObject bloodParticleEffect = Instantiate(bloodParticles, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                Destroy(bloodParticleEffect, .4f);
+                Destroy(hitParticleEffect, .001f);
             }   
 
             if(hit.transform.gameObject.GetComponent<HealthController>())
             {
                 hit.transform.gameObject.GetComponent<HealthController>().ApplyDamage(damage);
-            }    
+            }
+
+            if (hit.transform.gameObject.GetComponent<Headshot>())
+            {
+                //Debug.Log(hit.transform.name + "hit");
+                hit.transform.gameObject.GetComponent<Headshot>().ApplyDamage(headshotDamage);
+            }
         }
     }
 

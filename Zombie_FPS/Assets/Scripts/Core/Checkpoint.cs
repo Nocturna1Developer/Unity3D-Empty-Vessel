@@ -20,25 +20,25 @@
 //         }
 //     }
 // }
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
 
-public class Checkpoint : MonoBehaviour
-{
-    public PlayerHealth playerHealth;
+// public class Checkpoint : MonoBehaviour
+// {
+//     public PlayerHealth playerHealth;
 
-    void Start()
-    {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-    }
+//     void Start()
+//     {
+//         //playerHealth = FindObjectOfType<PlayerHealth>();
+//     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag.Equals("Player"))
-        {
-           playerHealth.SetSpawnPoint(transform.position);
-            //Destroy(gameObject);
-        }
-    }
-}
+//     private void OnTriggerEnter(Collider other)
+//     {
+//         if (other.tag.Equals("Player"))
+//         {
+//            playerHealth.SetSpawnPoint(transform.position);
+//             //Destroy(gameObject);
+//         }
+//     }
+// }

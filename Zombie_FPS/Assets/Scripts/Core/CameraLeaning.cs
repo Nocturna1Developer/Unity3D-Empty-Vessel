@@ -88,7 +88,7 @@ public class CameraLeaning : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(cameraTransform.position, cameraTransform.TransformDirection(Vector3.left * 0.5f), out hit, 0.5f))
         {
-            isLeaningLeft = true;
+            isLeaningLeft = false;
         }
     }
     
@@ -97,7 +97,7 @@ public class CameraLeaning : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(cameraTransform.position, cameraTransform.TransformDirection(Vector3.right * 0.5f), out hit, 0.5f))
         {
-            isLeaningRight = true;
+            isLeaningRight = false;
         }
     }
 }
