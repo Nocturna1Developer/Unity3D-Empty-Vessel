@@ -1,33 +1,35 @@
 # Unity3D-ZombieFPS_Game
 
-https://gamejolt.com/games/emptyvessel/481391
+# The Empty Vessel
 
-This game is a first-person zombie shooter that implements advanced gun mechanics such as gun animations, player leaning, weapon sway, and bullet spread. I constructed a patrol path and zombie wander system to make my artificial intelligence more advanced and dynamic. My AI responds to volumetric and collision triggers, and work under a finite state machine. The game takes place in a massive abandoned city and its outskirts with a lot of room for exploration. To further the verisimilitude, I incorporated post-processing effects, which amplify the overall look of the game.
+https://nocturna1.itch.io/the-empty-vessel 
 
-The town you once knew is no more. It has been 5 years since you died.
+##Game Description:
 
-For an unknown reason, you come back to life without being infected.
+  This game is a first-person zombie shooter that implements advanced gun mechanics such as gun animations, player leaning, weapon sway, and bullet spread. I constructed a patrol path and zombie wander system to make my artificial intelligence more advanced and dynamic. My AI responds to volumetric and collision triggers, and work under a finite state machine. The game takes place in a massive abandoned city and its outskirts with a lot of room for exploration. To further the verisimilitude, I incorporated post-processing effects, which amplify the overall look of the game.
 
-As you search for answers, you are faced with danger at every corner.
+  The world has been overrun by zombies due to illegal government testing. For an unknown reason, you come back to life after being dead for 60 years. As you search for answers, you are faced with danger at every corner.
 
-For now, you have one goal.
+  Look for notes left behind by previous survivors and scavenge for supplies as you traverse a mysterious abandoned city.
 
-Escape.
+##Controls:
 
-Controls
+  LEAN/TILT - Q, E
+  SHOOT/AIM - Left/Right Click
+  MOVE - W,A,S,D
+  SPRINT - Shift
+  JUMP - Spacebar
+  RELOAD - R
+  
+##Credits:
 
-LEAN/TILT - Q, E
+  Flooded Grounds
+  ZSplat Royalty Free Audio
+  Zombie Horror Sounds
+  Yaseen Mujahid - FPS Hands
+  Zombie Model
+  Dafont Fonts
 
-SHOOT/AIM - Left/Right Click
-
-MOVE - W,A,S,D
-
-SPRINT - Shift
-
-CROUCH - Left Ctrl
-
-JUMP - Spacebar
-
-RELOAD - R
+###Tags
 
 #shooter #zombie #action #adventure #horror #survival #other #unity #3D #fps #firstpersonshooter #atmospheric #ambient #singleplayer #linear #city #nature #fun #scary
