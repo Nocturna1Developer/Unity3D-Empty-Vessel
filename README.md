@@ -30,4 +30,4 @@
 
 ### Tags
 
-#shooter #zombie #action #adventure #horror #survival #other #unity #3D #fps #firstpersonshooter #atmospheric #ambient #singleplayer #linear #city #nature #fun #scary
+# scary #shooter #zombie #action #adventure #horror #survival #other #unity #3D #fps #firstpersonshooter #atmospheric #ambient #singleplayer #linear #city #nature #fun
