@@ -1,5 +1,3 @@
-# Unity3D-ZombieFPS_Game
-
 # The Empty Vessel
 
 ## Link: https://nocturna1.itch.io/the-empty-vessel 
