@@ -27,3 +27,5 @@
   * Yaseen Mujahid - FPS Hands
   * Zombie Model
   * Dafont Fonts
+  
+  I made this game for fun using only free assets from the Unity Store. :)
