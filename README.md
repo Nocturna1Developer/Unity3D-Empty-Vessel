@@ -27,7 +27,3 @@
   * Yaseen Mujahid - FPS Hands
   * Zombie Model
   * Dafont Fonts
-
-### Tags
-
-# scary #shooter #zombie #action #adventure #horror #survival #other #unity #3D #fps #firstpersonshooter #atmospheric #ambient #singleplayer #linear #city #nature #fun
