@@ -1,6 +1,8 @@
 # The Empty Vessel
 
-## Link: https://nocturna1.itch.io/the-empty-vessel 
+## PLAY HERE: https://nocturna1.itch.io/the-empty-vessel 
+
+## WATCH HERE: https://www.youtube.com/watch?v=i-WyRDsDctM&list=PLs_4rBValRlRsv5RgWV-eRb6QP06JnjH5&index=4&ab_channel=NOKTURNALGAMEDEV
 
 ## Game Description:
 
